@@ -1,16 +1,16 @@
 body {
   background-color: #0093E9;
   background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  margin: 0 5px;
 }
 body h2,
 body h4 {
   font-family: "Baloo 2", cursive;
 }
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
+body img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
 }
 
 nav {
@@ -25,12 +25,11 @@ nav h1 {
 }
 
 #information {
-  margin: 22px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 80vh;
+  max-height: 70%;
+  margin: 0 0 0 25px;
   gap: 10px;
-  max-height: 80vh;
 }
 #information h1 {
   font-family: "Baloo Tammudu 2", cursive;
@@ -99,25 +98,40 @@ nav h1 {
   border: 2px solid red;
   border-radius: 20px;
   text-align: center;
+  max-width: 450px;
 }
 #information .humidity-feel h1 {
-  font-size: 2rem;
+  font-size: 3rem;
+  margin-bottom: 0;
 }
 #information .humidity-feel h2 {
-  font-size: 5rem;
+  font-size: 4rem;
+  font-weight: 50;
   padding: 0;
   margin: 0;
 }
 #information .humidity-feel #humidity {
   height: 30%;
 }
+#information .humidity-feel #feels-like {
+  margin-top: 30%;
+}
+
 .current #search {
   width: 90%;
   height: 40px;
   margin-top: 10px;
   border-radius: 15px;
-  border: 5px solid blue;
+  border: white;
+  font-size: larger;
+  font-weight: 500;
+  outline-style: groove;
   background-color: transparent;
+}
+
+.current #search:focus {
+  outline-width: 4px;
+  outline-color: darkblue;
 }
 
 /*# sourceMappingURL=styles.css.map */

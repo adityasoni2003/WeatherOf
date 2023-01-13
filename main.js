@@ -7,8 +7,8 @@ let cityText;
 
 //A function to return the source URL for icons
 function getIcon(icon) {
-
-    return `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    let res = `http://openweathermap.org/img/wn/${icon}@2x.png`
+    return res ;
 }
 
 // Function to formate the temperature string into our degree celcius
@@ -46,9 +46,11 @@ function loadCurrentWeather({ main: { temp, temp_min, temp_max, }, name, weather
     document.querySelector("#current-temp").textContent = formateTemp(temp);
     document.querySelector("#high-low").textContent = `High:${formateTemp(temp_max)}   Low:${formateTemp(temp_min)}`;
     document.querySelector(".current-temp #desc").textContent = description;
+    console.log(icon)
 
     document.querySelector("#current-icon").setAttribute("scr", getIcon(icon));
 }
+
 
 function loadHourlyWeather({ main: { temp: TempNow }, weather: [{ icon: IconNow }] }, hourlyData) {
     let interValForecast = hourlyData.slice(1, 14);
@@ -94,7 +96,8 @@ function calculateDayWiseForecast(hourlyFore) {
     for (let [key, value] of dayWise.entries()) {
         let minimumTemp = Math.min(...Array.from(value, val => val.temp_min));
         let maximumTemp = Math.min(...Array.from(value, val => val.temp_max));
-        dayWise.set(key, { minimumTemp, maximumTemp, icon: value.find(v => v.icon).icon })
+        dayWise.set(key, { minimumTemp, maximumTemp, icon: value.find(v => v.icon).icon})
+        
     };
 
     return dayWise;
@@ -109,6 +112,7 @@ function loadFiveDaysWeather(hourlyData) {
     let dayWiseHtml = ``;
 
     Array.from(dayWiseForecast).map(([day, { minimumTemp, maximumTemp, icon }], index) => {
+        
         dayWiseHtml += `<div class="day-wise">
         <h1 class="day">${index === 0 ? "Today" : day}</h1>
         <img class="day-icon" src="${getIcon(icon)}" alt="">
@@ -131,6 +135,19 @@ function loadFeelsLikeHumidity({ main: { feels_like, humidity } }) {
 }
 
 
+async function loadData() {
+    const weatherInfo = await getCurrentWeather(cityLocation);
+
+    loadCurrentWeather(weatherInfo);
+
+    const hourlyData = await getHourlyData(weatherInfo);
+    loadHourlyWeather(weatherInfo, hourlyData);
+    loadFeelsLikeHumidity(weatherInfo);
+    loadFiveDaysWeather(hourlyData);
+
+}
+
+
 function loadForecastUsingGeolocation() {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
 
@@ -145,18 +162,6 @@ function loadForecastUsingGeolocation() {
 }
 
 
-
-async function loadData() {
-    const weatherInfo = await getCurrentWeather(cityLocation);
-
-    loadCurrentWeather(weatherInfo);
-
-    const hourlyData = await getHourlyData(weatherInfo);
-    loadHourlyWeather(weatherInfo, hourlyData);
-    loadFeelsLikeHumidity(weatherInfo);
-    loadFiveDaysWeather(hourlyData);
-
-}
 //Implementing search functionality
 
 async function getCities(searchText) {
@@ -208,6 +213,7 @@ function handleCitySelected(event) {
         loadData();
     }
 }
+
 
 
 document.addEventListener("DOMContentLoaded", async () => {
