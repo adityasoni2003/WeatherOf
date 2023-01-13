@@ -1,18 +1,27 @@
 body {
   background-color: #0093E9;
   background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-  background-repeat: no-repeat;
-  margin: 0;
+}
+body h2,
+body h4 {
+  font-family: "Baloo 2", cursive;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 nav {
   width: 100%;
-  margin: auto;
+  margin: 0;
   text-align: center;
 }
 nav h1 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Baloo Tammudu 2", "cursive";
   font-size: 3rem;
+  margin: 0;
 }
 
 #information {
@@ -21,11 +30,27 @@ nav h1 {
   grid-template-columns: repeat(3, 1fr);
   height: 80vh;
   gap: 10px;
+  max-height: 80vh;
+}
+#information h1 {
+  font-family: "Baloo Tammudu 2", cursive;
 }
 #information .current {
   border: 2px solid black;
   border-radius: 20px;
   text-align: center;
+  max-width: 450px;
+}
+#information .current h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+#information .current h2 {
+  margin-bottom: 0px;
+}
+#information .current p {
+  font-size: larger;
+  margin: 0;
 }
 #information .current #hourly-forecast {
   display: grid;
@@ -35,15 +60,23 @@ nav h1 {
   gap: 20px;
   overflow-x: scroll;
 }
+#information .current #hourly-forecast h4 {
+  font-size: 2rem;
+  margin: 0;
+}
 #information .five-day-forecast {
   border: 2px solid purple;
   border-radius: 20px;
   text-align: center;
+  max-width: 450px;
 }
 #information .five-day-forecast h1 {
   margin-bottom: 0px;
   margin-top: 10px;
   font-size: 2.5rem;
+}
+#information .five-day-forecast #five-days {
+  margin: 0 5px;
 }
 #information .five-day-forecast #five-days div {
   align-items: center;
@@ -58,8 +91,9 @@ nav h1 {
 }
 #information .five-day-forecast #five-days div h4 {
   display: inline-block;
-  margin: 0;
-  font-size: 1rem;
+  margin: 0 2px;
+  font-size: 1.5rem;
+  font-weight: 200;
 }
 #information .humidity-feel {
   border: 2px solid red;
@@ -77,10 +111,6 @@ nav h1 {
 #information .humidity-feel #humidity {
   height: 30%;
 }
-#information .humidity-feel #feels-like {
-  background-color: red;
-}
-
 .current #search {
   width: 90%;
   height: 40px;

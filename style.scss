@@ -10,20 +10,33 @@ $Baloo-Bhai-Font: 'Baloo 2', cursive;
 body {
     background-color: #0093E9;
     background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-    background-repeat: no-repeat;
-    margin: 0;
+
+    h2,
+    h4 {
+        font-family: $Baloo-Bhai-Font;
+
+    }
+
 }
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
 
 nav {
 
     width: 100%;
-    margin: auto;
+    margin: 0;
     text-align: center;
 
     h1 {
 
-        font-family: 'Roboto Condensed', sans-serif;
+        font-family: 'Baloo Tammudu 2', 'cursive';
         font-size: 3rem;
+        margin: 0;
     }
 }
 
@@ -33,14 +46,33 @@ nav {
     grid-template-columns: repeat(3, 1fr);
     height: 80vh;
     gap: $spacing-small;
+    max-height: 80vh;
 
+    h1 {
+        font-family: 'Baloo Tammudu 2', cursive;
+    }
 
     .current {
         border: 2px solid black;
         border-radius: $spacing;
         text-align: center;
+        max-width: 450px;
 
-        
+        h1 {
+            font-size: $font-size-large;
+            margin: 0;
+        }
+
+        h2 {
+            margin-bottom: 0px;
+        }
+
+
+        p {
+            font-size: larger;
+            margin: 0;
+        }
+
         #hourly-forecast {
             display: grid;
             grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
@@ -48,6 +80,11 @@ nav {
             grid-auto-rows: minmax(10px, 1fr);
             gap: $spacing;
             overflow-x: scroll;
+
+            h4 {
+                font-size: $font-size-large;
+                margin: 0;
+            }
 
 
         }
@@ -58,6 +95,7 @@ nav {
         border: 2px solid purple;
         border-radius: $spacing;
         text-align: center;
+        max-width: 450px;
 
         h1 {
             margin-bottom: 0px;
@@ -66,6 +104,8 @@ nav {
         }
 
         #five-days {
+            margin: 0 5px;
+
             div {
                 align-items: center;
                 text-align: center;
@@ -80,8 +120,9 @@ nav {
 
                 h4 {
                     display: inline-block;
-                    margin: 0;
-                    font-size: $font-size-medium ;
+                    margin: 0 2px;
+                    font-size: 1.5rem;
+                    font-weight: 200;
                 }
 
             }
@@ -108,9 +149,7 @@ nav {
 
         }
 
-        #feels-like {
-            background-color: red;
-        }
+        #feels-like {}
     }
 }
 
