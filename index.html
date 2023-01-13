@@ -4,11 +4,90 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>⛅WeatherOF</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+
 </head>
 <body>
+    <nav id="logo">
+        <h1 id="name">WeatherOF</h1>
+    </nav>
+    <section id="information">
+        <article class="current">
+            <input list="cities" type="search" id="search" name="search" placeholder="Search For Cities" autocomplete="off">
+            <datalist id="cities">
 
+            </datalist>
+            <div class="current-temp">
+                <h1 id="city">Indore</h1>
+                <h2 id="current-temp">22'</h2>
+                <img id="current-icon" alt="" height="100px" width="100px">
+                <p id="desc">Hot Hai</p>
+                <h4 id="high-low">High:22' Low:33'</h4>
+
+
+            </div>
+            <div id="hourly">
+                <h1>Hourly Forecast</h1>
+                
+
+                    <section id="hourly-forecast">
+                        <div class="hourly-div">
+                            <h2 class="hourly-temp">22'</h2>
+                            <img src="" alt="" class="icon">Icon
+                            <h4 class="hourly-time">9:00</h4>
+                        </div>
+    
+                    </section>
+                
+
+            </div>
+
+
+        </article>
+        <article class="five-day-forecast">
+            <h1>Five Days Forecast</h1>
+            <section id="five-days">
+                <div class="day-wise">
+                    <h1 class="day">Today</h1>
+                    <img class="day-icon" src="" alt="" height="100px" width="100px">
+                    <h4 class="day-high">High:22'</h4>
+                    <h4 class="day-low">Low:33'</h4>
+    
+                </div>
+
+                <div class="day-wise">
+                    
+                    <h1 class="day">Wed</h1>
+                        
+                    <img class="day-icon" src="" alt="" height="100px" width="100px">
+                    <h4 class="day-high">High:22'</h4>
+                    <h4 class="day-low">Low:33'</h4>
+                </div>
+
+            </section>
+
+
+        </article>
+        <article class="humidity-feel">
+            <div id="humidity">
+                <h1>Humidity</h1>
+                <h2 id="humidity-value">44%</h2>
+
+            </div>
+            <div id="feels-like">
+                <h1>Feels Like</h1>
+                <h2 id="feels-like-temp">22'</h2>
+
+            </div>
+
+        </article>
+    </section>
 
     
 

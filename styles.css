@@ -1,0 +1,93 @@
+body {
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+nav {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+nav h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 3rem;
+}
+
+#information {
+  margin: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 80vh;
+  gap: 10px;
+}
+#information .current {
+  border: 2px solid black;
+  border-radius: 20px;
+  text-align: center;
+}
+#information .current #hourly-forecast {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+  grid-auto-flow: column;
+  grid-auto-rows: minmax(10px, 1fr);
+  gap: 20px;
+  overflow-x: scroll;
+}
+#information .five-day-forecast {
+  border: 2px solid purple;
+  border-radius: 20px;
+  text-align: center;
+}
+#information .five-day-forecast h1 {
+  margin-bottom: 0px;
+  margin-top: 10px;
+  font-size: 2.5rem;
+}
+#information .five-day-forecast #five-days div {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  place-content: center;
+}
+#information .five-day-forecast #five-days div h1.day {
+  padding: 0;
+  margin: 0;
+  font-size: 2rem;
+}
+#information .five-day-forecast #five-days div h4 {
+  display: inline-block;
+  margin: 0;
+  font-size: 1rem;
+}
+#information .humidity-feel {
+  border: 2px solid red;
+  border-radius: 20px;
+  text-align: center;
+}
+#information .humidity-feel h1 {
+  font-size: 2rem;
+}
+#information .humidity-feel h2 {
+  font-size: 5rem;
+  padding: 0;
+  margin: 0;
+}
+#information .humidity-feel #humidity {
+  height: 30%;
+}
+#information .humidity-feel #feels-like {
+  background-color: red;
+}
+
+.current #search {
+  width: 90%;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 15px;
+  border: 5px solid blue;
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=styles.css.map */
