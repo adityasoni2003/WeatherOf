@@ -202,7 +202,7 @@ function debounce(fn) {
 
     }
 }
-const debounceSearch = debounce(event => searchCity(event));
+const debounceSearch = debounce(searchCity);
 
 function handleCitySelected(event) {
     cityText = event.target.value;
